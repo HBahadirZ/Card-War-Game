@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Round Result</title>
+</head>
+<body>
+    <h1>Round Result</h1>
+    {% for result in results %}
+        <h2>Attacker: {{ result[0] }}</h2>
+        <p>Defender: {{ result[1] }}</p>
+        <p>Damage: {{ result[2] }}</p>
+        {% if result[3] %}
+            <p><strong>Defender is defeated!</strong></p>
+        {% endif %}
+    {% endfor %}
+    
+    <h1>Player 1's Field</h1>
+    <ul>
+        {% for card in player1_field %}
+            <li>{{ card }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h1>Player 2's Field</h1>
+    <ul>
+        {% for card in player2_field %}
+            <li>{{ card }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="/">Play Again</a>
+</body>
+</html>

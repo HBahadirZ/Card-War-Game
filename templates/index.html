@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Card Game</title>
+</head>
+<body>
+    <h1>Player 1's Hand</h1>
+    <form action="/play" method="post">
+        <h2>Select 3 Cards for Player 1</h2>
+        {% for card in player1_hand %}
+            <input type="checkbox" name="player1_choices" value="{{ loop.index0 }}"> {{ card }}<br>
+        {% endfor %}
+        
+        <h1>Player 2's Hand</h1>
+        <h2>Select 3 Cards for Player 2</h2>
+        {% for card in player2_hand %}
+            <input type="checkbox" name="player2_choices" value="{{ loop.index0 }}"> {{ card }}<br>
+        {% endfor %}
+        
+        <button type="submit">Play Round</button>
+    </form>
+</body>
+</html>
